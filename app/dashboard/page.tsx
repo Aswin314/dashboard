@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 const page = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
@@ -12,6 +12,17 @@ const page = () => {
                         Welcome back! Here you can manage your tasks, view analytics, and
                         make adjustments.
                     </p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <Link href="dashboard/tasks" className="bg-blue-100 hover:bg-blue-200 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 ease-in-out transform hover:scale-105">
+                        <div className="flex items-center justify-between">
+                            <h2 className="text-xl font-semibold text-blue-800">tasks </h2>
+                            <span className="text-blue-500 text-2xl">📋</span>
+                        </div>
+                        <p className="text-gray-700 mt-2">
+                            View, organize, and manage your daily tasks.
+                        </p>
+                    </Link>
                 </div>
             </div>
         </div>
