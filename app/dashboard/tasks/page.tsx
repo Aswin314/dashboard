@@ -30,15 +30,14 @@ const page = () => {
                 <h1 className="text-3xl font-bold text-gray-800 mb-8">Tasks</h1>
                 <section className="space-y-6">
                     {tasks.map((task) => (
-                        <div key={task.id} className="flex items-center justify-between bg-white rounded-lg 
-              shadow-md p-6 border-l-4"  style={{
-                                borderColor:
-                                    task.status === "Completed"
-                                        ? "green"
-                                        : task.status === "In Progress"
-                                            ? "yellow"
-                                            : "red",
-                            }}>
+                        <div key={task.id} className="flex items-center justify-between bg-white rounded-lg shadow-md p-6 border-l-4" style={{
+                            borderColor:
+                                task.status === "Completed"
+                                    ? "green"
+                                    : task.status === "In Progress"
+                                        ? "yellow"
+                                        : "red",
+                        }}>
                             <div className="flex flex-col">
                                 <h2 className="text-xl font-semibold text-gray-800">
                                     {task.title}
@@ -48,6 +47,20 @@ const page = () => {
                                     Due Date: {task.dueDate}
                                 </p>
                             </div>
+                            <section className=' flex space-x-4'>
+                                <span className={`px-4 py-3 text-center text-sm rounded-full ${task.status === "Completed"
+                                    ? "bg-green-100 text-green-600"
+                                    : task.status === "In Progress"
+                                        ? "bg-yellow-100 text-yellow-600"
+                                        : "bg-red-100 text-red-600"
+                                    }`}>{task.status}</span>
+                                <button className="px-4 py-2 text-white bg-blue-400 rounded-lg cursor-pointer hover:bg-blue-700 transition-colors">Edit</button>
+                                {task.status !== "Completed" && (
+                                    <button className='bg-green-300  hover:bg-green-500  rounded-lg px-4 py-2'>Mark this task</button>
+                                )}
+                                <button>Delete</button>
+                            </section>
+
                         </div>
                     ))}
                 </section>
