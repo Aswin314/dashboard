@@ -21,6 +21,17 @@ const page = () => {
                             View detailed information about each user in your system.
                         </p>
                     </Link>
+                    <Link
+                        href="/dashboard/users/users-list"
+                        className="bg-orange-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow"
+                    >
+                        <h2 className="text-xl font-semibold text-orange-800 mb-2">
+                            User List
+                        </h2>
+                        <p className="text-gray-600">
+                            Browse and manage all users in the system.
+                        </p>
+                    </Link>
                 </div>
             </div>
         </div>
